@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../CSS/style.css" type="text/css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>华银精致有限管理公司</title>
+</head>
+
+<body>
+    <header>
+        <img src="../image/HuaYin.png" width="40%" />
+        <p>📞 咨询热线：<em>0755-89811158</em></p>
+        <div class="menu" id="myMenu">
+            <a href="#">网站首页</a>
+            <a href="#">关于我们</a>
+            <a href="#">投资团队</a>
+            <a href="#">认购流程</a>
+            <a href="#">财富管理</a>
+            <a href="#">财务顾问</a>
+            <a href="#">私募管家</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </div>
+    </header>
+    <main>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'QiXiaChanPin')" id="defaultOpen">旗下产品</button>
+            <button class="tablinks" onclick="openCity(event, 'XinWenZhongXin')">新闻中心</button>
+            <button class="tablinks" onclick="openCity(event, 'JiJinBaoGao')">基金报告</button>
+            <button class="tablinks" onclick="openCity(event, 'ZuiXinGongGao')">最新公告</button>
+        </div>
+
+        <div id="QiXiaChanPin" class="tabcontent">
+            <side-nav v-for="(site, index) of sites" :name="site.name" :content="site.content" :key="index"></side-nav>
+            <!-- <div id="mySidenav2" class="sidenav" :class="{open}">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">&times;</a>
+                    <a href="#">About me</a>
+                    <a href="#">Services good</a>
+                    <a href="#">Clients ok</a>
+                    <a href="#">Contact hi</a>
+                    <p></p>
+                </div> -->
+            <div>
+                <strong
+                    style="font-size: 16px;padding:3px;">根据监管要求，私募基金产品业绩不在官网披露，最新净值查询请致电公司客服部📞：0755-89811158</strong>
+                <hr>
+            </div>
+
+        </div>
+
+        <div id="XinWenZhongXin" class="tabcontent">
+            <table-td v-for="item in items" :name="item.name" :url="item.url"></table-td>
+        </div>
+
+        <div id="JiJinBaoGao" class="tabcontent">
+            <table-jijin v-for="item in items" :name="item.name" :url="item.url"></table-jijin>
+        </div>
+
+        <div id="ZuiXinGongGao" class="tabcontent">
+            <a href="http://weidian.com/item.html?itemID=1496898686">
+                <div class="shiZhan">
+                    <p class="title">实战手筋</p>
+                    <p class="body-main">股市<em style="color:black">黑客</em>理论</p>
+                    <p class="body-footer">点击订购</p>
+                </div>
+            </a>
+            <div class="lianXi">
+                <div class="title">
+                    <img src="../image/联系方式.png" /><strong style="position: relative;top:-10px;left:10px">联系方式</strong>
+                </div>
+                <h4 style="text-indent:2em;font-size: 1.2em;">服务热线</h4>
+                <p style="text-indent:2em">📞：<strong
+                        style="font-size: 1.5em;color:rgb(180, 9, 9)">0755-89811158</strong></p>
+                <h4 style="text-indent:2em;font-size: 1.2em;">邮箱</h4>
+                <p style="text-indent:2em; font-size: 1.5em; color:rgb(180, 9, 9)">huayinjingzhi@163.com</p>
+
+            </div>
+
+
+        </div>
+    </main>
+    <aside>
+        <strong>合作伙伴</strong>
+        <a href="javascript:;" id="position1" class="font-size">left</a>
+        <a href="javascript:;" id="position2" class="font-size">right</a>
+        <div id="div1">
+            <ul>
+                <li><a href="http://www.essence.com.cn/" target="_blank"><img src="../image/logo_axzq.jpg"
+                            alt="安信证券"></a></li>
+                <li><a href="http://www.szkingdom.com/" target="_blank"><img src="../image/logo_gxzq.jpg"
+                            alt="国信证券"></a></li>
+                <li><a href="http://www.hundsun.com/" target="_blank"><img src="../image/logo_hs.jpg" alt="恒生电子"></a>
+                </li>
+                <li><a href="http://www.szkingdom.com/" target="_blank"><img src="../image/logo_jz.jpg" alt="金证股份"></a>
+                </li>
+                <li><a href="http://www.newone.com.cn/" target="_blank"><img src="../image/logo_zszq.jpg"
+                            alt="招商证券"></a></li>
+                <li><a href="http://www.ecitic.com/" target="_blank"><img src="../image/logo_zxyh.jpg" alt="中信银行"></a>
+                </li>
+                <li><a href="http://www.cmbchina.com/" target="_blank"><img src="../image/logo_zsyh.jpg" alt="招商银行"></a>
+                </li>
+                
+            </ul>
+        </div>
+    </aside>
+    <footer>
+        <div class="head">
+            <a href="#">网站首页</a>
+            <a href="#">关于我们</a>
+            <a href="#">投资团队</a>
+            <a href="#">认购流程</a>
+            <a href="#">财富管理</a>
+            <a href="#">财务顾问</a>
+            <a href="#">私募管家</a>
+        </div>
+        <p align="center" style="font-style: 0.5em;">Copyright © 2008-2018 FineHedgefunds. All Rights Reserved. Email:
+            huayinjingzhi@163.com</p>
+        <p align="center" style="font-size: 0.8em;">版权所有 © 深圳市华银精治资产管理有限公司 粤ICP备14083240号</p>
+        <p align="center"><img src="../image/bg_foot.jpg" /></p>
+    </footer>
+    <script src="../script/script.js"></script>
+</body>
+
+</html>
